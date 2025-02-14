@@ -37,7 +37,7 @@ Many professionals and researchers work with large documents but struggle to ext
 
 ### Frontend
 
-- React
+- React (react-dropzone or react-dnd for drag-and-drop (perferred))
 - Tailwind CSS (styling option)
 - Framer Motion (animations)
 - Styled-Components (alternative styling option)
@@ -48,6 +48,7 @@ Many professionals and researchers work with large documents but struggle to ext
 - Knex.js (SQL query builder
 - MySQL (database for storing user queries and document metadata)
 - fs (File System) (handling file uploads)
+- Python + FastAPI + Tensorflow + PyTorch (optional)
 
 ### AI Integration Options (Ranked)
 
@@ -60,6 +61,10 @@ Many professionals and researchers work with large documents but struggle to ext
 3. LangChain + Local LLM (e.g., Llama 2 or GPT-4-All)
     - Ideal for privacy-focused applications.
     - Requires additional infrastructure for hosting the model.
+4. Google Gemini API
+    - Strong multimodal capabilities (text, images, etc.).
+    - May offer better integration with Google Cloud services.
+    - Requires API key setup and usage monitoring.
 
 ## Development Process
 
@@ -192,3 +197,13 @@ Response:
 - UI/UX improvements based on user feedback.
 - Unit and Integration Tests
 - more security considerations with no use of third party api
+
+- Authentication: Add JWT-based auth to track user-specific documents.
+
+- Scalability: Use Redis/Celery for async document processing and/or replace ChromaDB with Pinecone for persistent storage.
+
+- Security: Validate file types and scan for malware and/or rate-limit API endpoints.
+
+- Error Handling: Add retry logic for failed API calls and/or implement proper logging (e.g., with logging or Sentry).
+
+- UI Improvements: Add progress bars for file uploads and/or stream answers using Server-Sent Events (SSE).
