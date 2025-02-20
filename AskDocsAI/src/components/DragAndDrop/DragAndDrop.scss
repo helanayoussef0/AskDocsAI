@@ -1,0 +1,43 @@
+.drag-drop {
+    text-align: center;
+    margin: 2rem 0;
+  
+    .dropzone {
+      border: 2px dashed #cccccc;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+  
+      &__prompt {
+        color: #666;
+        opacity: 0.7;
+        margin: 0;
+      }
+  
+      &.active {
+        border-color: #2196F3;
+        background-color: #f5fbff;
+      }
+    }
+  
+    .analyze-button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #1976D2;
+      }
+  
+      &:disabled {
+        background-color: #90CAF9;
+        cursor: not-allowed;
+      }
+    }
+  }
