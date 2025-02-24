@@ -1,93 +1,95 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/globals" as *;
 
 .drag-drop {
     width: 100%;
     max-width: 600px;
-    margin: 2rem auto;
-  
+    margin: $spacer-lg auto;
+
     .dropzone {
-      border: 2px dashed #ced4da;
-      border-radius: 12px;
-      background: #f8f9fa;
+      border: 2px dashed $border-color;
+      border-radius: $border-radius-lg;
+      background: $light-gray;
       padding: 2rem;
-      margin: 1rem 0;
+      margin: $spacer-sm 0;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
       min-height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
-  
+
       &__prompt {
-        color: #6c757d;
+        color: $dark-gray;
         margin: 0;
-        font-size: 1.1rem;
+        font-size: $font-size-lg;
         text-align: center;
         transition: opacity 0.3s ease;
       }
-  
+
       &.active {
-        border-color: #4dabf7;
-        background-color: #e7f5ff;
+        border-color: $primary-color;
+        background-color: $light-gray;
         .dropzone__prompt {
           opacity: 0.8;
         }
       }
-  
+
       &.has-file {
-        border-color: #40c057;
-        background-color: #ebfbee;
+        border-color: $secondary-color;
+        background-color: $light-gray;
         padding: 1.5rem;
       }
-  
+
       .file-info {
         width: 100%;
         display: flex;
         align-items: center;
         gap: 1rem;
         padding: 0.5rem;
-  
+
         .file-icon {
           font-size: 1.8rem;
-          color: #40c057;
+          color: $secondary-color;
           flex-shrink: 0;
         }
-  
+
         .file-details {
           flex: 1;
           min-width: 0;
-  
+
           .file-name {
             display: block;
             font-weight: 500;
-            color: #2b2d42;
+            color: $text-color;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
           }
-  
+
           .file-size {
-            color: #6c757d;
-            font-size: 0.9rem;
+            color: $dark-gray;
+            font-size: $font-size-sm;
             margin-top: 0.25rem;
           }
         }
-  
+
         .remove-button {
           background: none;
           border: none;
-          color: #ff6b6b;
+          color: $warning-color;
           cursor: pointer;
           padding: 0.5rem;
           margin-left: auto;
           flex-shrink: 0;
           transition: all 0.2s ease;
-  
+
           &:hover {
-            color: #ff5252;
+            color: $error-color;
             transform: scale(1.1);
           }
-  
+
           svg {
             display: block;
             width: 1.25rem;
@@ -96,35 +98,35 @@
         }
       }
     }
-  
+
     .analyze-button {
       display: block;
       width: 100%;
       max-width: 200px;
       margin: 1.5rem auto 0;
       padding: 0.75rem 1.5rem;
-      background-color: #4dabf7;
+      background-color: $primary-color;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: $border-radius;
+      font-size: $font-size-base;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+      box-shadow: $box-shadow;
+
       &:hover:not(:disabled) {
-        background-color: #339af0;
+        background-color: $secondary-color;
         transform: translateY(-1px);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
-  
+
       &:active:not(:disabled) {
         transform: translateY(0);
       }
-  
+
       &:disabled {
-        background-color: #adb5bd;
+        background-color: $dark-gray;
         cursor: not-allowed;
         opacity: 0.7;
       }
@@ -133,4 +135,4 @@
         opacity: 0.5;
       }
     }
-  }
+}
