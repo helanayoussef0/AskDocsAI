@@ -25,6 +25,3 @@ dist-ssr
 
 .env
 .DS_Store
-
-vite.config.js
-eslint.config.js

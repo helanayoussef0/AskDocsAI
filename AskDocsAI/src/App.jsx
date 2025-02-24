@@ -48,7 +48,7 @@ function App() {
           </div>
         </div>
       )}
-      {documentContent && isAnalyzed && <AIChat />}
+      {documentContent && isAnalyzed && <AIChat documentContent={documentContent} />}
     </div>
   );
 }
