@@ -1,0 +1,77 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+
+  h1 {
+    text-align: center;
+    color: #2b2d42;
+    margin-bottom: 2rem;
+  }
+}
+
+.success-message,
+.error-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+
+  .success-content,
+  .error-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.success-message {
+  background-color: #40c057;
+  color: white;
+  animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in 2.7s;
+}
+
+.error-message {
+  background-color: #fa5252;
+  color: white;
+  
+  svg {
+    fill: currentColor;
+    stroke: none;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
