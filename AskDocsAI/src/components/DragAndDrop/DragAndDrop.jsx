@@ -22,7 +22,7 @@ const DragAndDrop = ({ onFileUpload, onAnalyze }) => {
       reader.onload = () => {
         const content = reader.result;
         setFileContent(content);
-        onFileUpload(content);
+        onFileUpload(content, file.name);
       };
       reader.readAsText(file);
     }
@@ -31,7 +31,7 @@ const DragAndDrop = ({ onFileUpload, onAnalyze }) => {
   const handleRemove = () => {
     setUploadedFile(null);
     setFileContent(null);
-    onFileUpload(null);
+    onFileUpload(null, null);
   };
 
   const handleAnalyze = async () => {
@@ -42,7 +42,6 @@ const DragAndDrop = ({ onFileUpload, onAnalyze }) => {
       await onAnalyze(fileContent);
     } catch (error) {
       console.error('Analysis failed:', error);
-      // You might want to add error handling UI here
     } finally {
       setIsAnalyzing(false);
     }
