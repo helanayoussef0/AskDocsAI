@@ -1,13 +1,18 @@
+@use "../src/styles/partials/fonts";
+@use "../src/styles/partials/globals" as *;
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+
 .app {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: $spacer-lg;
   position: relative;
 
   h1 {
     text-align: center;
-    color: #2b2d42;
-    margin-bottom: 2rem;
+    color: $text-color;
+    margin-bottom: $spacer-lg;
   }
 }
 
@@ -16,10 +21,10 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: $spacer;
+  border-radius: $border-radius;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: $z-index-top;
   animation: slideIn 0.3s ease-out;
 
   .success-content,
@@ -41,15 +46,15 @@
 }
 
 .success-message {
-  background-color: #40c057;
+  background-color: $secondary-color;
   color: white;
   animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in 2.7s;
 }
 
 .error-message {
-  background-color: #fa5252;
+  background-color: $error-color;
   color: white;
-  
+
   svg {
     fill: currentColor;
     stroke: none;
